@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume form</title>
+</head>
+<style>
+    textarea {
+        resize: none;
+    }
+
+    .form {
+        display: flex;
+        flex-direction: column;
+        width: 50vw;
+    }
+
+    .form>* {
+        margin-top: 3px;
+        margin-bottom: 3px;
+    }
+
+    .list-preview {
+        display: flex;
+        flex-direction: column;
+        margin-top: 2%;
+    }
+
+    .list-preview>* {
+        margin-top: 1px;
+        margin-bottom: 1px;
+    }
+
+    .list-preview>*:hover {
+        background-color: red;
+        color: white;
+        content: 'remove?';
+    }
+</style>
+
+<body>
+    <h1>Auto Resume Builder 2000</h1>
+    <p>
+        <h2>Instructions:</h2>
+        <ul>
+            <li>Complete this form</li>
+            <li>Your resume will be opened in a new tab as another webpage</li>
+            <li>Use your browsers printing functionality to save it as PDF</li>
+        </ul>
+        <strong></strong>
+    </p> <br><br>
+
+    <div class="form">
+        <h2>Basic info</h2>
+        <input minlength="3" id="name-input" type="text" placeholder="Full Name" required title="must be at least 3 characters long!">
+        <input minlength="3" id="job-title-input" type="text" placeholder="Job title ie. programmer" required title="must be at least 3 characters long!">
+        <textarea minlength="30" name="about" id="about-input" cols="30" rows="10" placeholder="About yourself" required required title="must be at least 30 characters long!"></textarea>
+        <div>
+            <label>Choose an avatar: </label>
+            <input type="file" id="avatar-input" accept="image/*"><br>
+            <i>*Square(1x1) images are recommended if you don't want distortion/stretching</i>
+        </div>
+    </div> <br><br>
+
+    <div class="form">
+        <h2>Contact info</h2>
+        <i>You can skip any of these but you need at least one</i>
+        <input type="email" id="email-input" placeholder="Your email address" required>
+        <input type="tel" id="number-input" placeholder="Your phone number" required>
+        <input type="text" id="linkedin-input" placeholder="Linkedin address" required>
+    </div> <br><br>
+
+    <div class="form">
+        <h2>Main part of the resume</h2>
+        <i>Again feel free to skip any of these</i>
+        <textarea name="" id="work-input" cols="30" rows="10" placeholder="Work experience"></textarea>
+        <textarea name="" id="edu-input" cols="30" rows="10" placeholder="Education"></textarea>
+        <textarea name="" id="certificate-input" cols="30" rows="10" placeholder="Certificates&Awards"></textarea>
+        <br>
+        <div>
+            <input type="text" placeholder="Skills">
+            <button onclick="addSkill(this)">Add skill</button>
+            <div class="list-preview">
+            </div>
+        </div>
+        <div>
+            <input type="text" placeholder="Languages">
+            <button onclick="addLanguage(this)">Add language</button>
+
+            <div class="list-preview">
+            </div>
+        </div>
+        <div>
+            <input type="text" placeholder="Interests">
+            <button onclick="addInterest(this)">Add interest</button>
+
+            <div class="list-preview">
+            </div>
+        </div>
+        <button onclick="submitForm()" style="margin-left: 70%; padding: 5px;">Build My Resume</button>
+    </div>
+</body>
+<script src="scripts/cvForm.js"></script>
+<script src="scripts/dataModifier.js"></script>
+
+</html>

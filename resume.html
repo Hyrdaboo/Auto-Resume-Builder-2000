@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume</title>
+</head>
+<style>
+    :root {
+        --dark: #323d4f;
+        --light: #82878f;
+        --list-item-color: #999da6;
+    }
+
+    .global-container {
+        font-family: Arial, Helvetica, sans-serif;
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .header {
+        flex-grow: 0.15;
+        display: flex;
+        flex-direction: row;
+        justify-content: start;
+    }
+
+    .header>div {
+        height: 100%;
+        margin-left: 3px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .contact {
+        flex-grow: 0.05;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        border-top: 1px solid;
+        border-bottom: 1px solid;
+        border-color: rgb(1, 1, 43);
+    }
+
+    .contact>div {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .contact>div>img {
+        width: 5%;
+        margin-right: 4px;
+    }
+
+    .main {
+        flex-grow: 0.8;
+        display: grid;
+        grid-template-columns: 3fr 2fr;
+    }
+
+    .main>div {
+        display: grid;
+    }
+
+    .main>div>div {
+        padding-left: 2%;
+    }
+
+
+    .main-section-title {
+        font-weight: bolder;
+        color: var(--dark);
+    }
+
+    .list-items {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .list-items>span {
+        background-color: var(--list-item-color);
+        color: white;
+        padding: 2.5%;
+        border-radius: 10px;
+    }
+</style>
+
+<body>
+    <div class="global-container">
+        <div class="header">
+            <div>
+                <img width="120" height="120" style="border-radius: 100%;" src="" alt="logo" id="pfp">
+            </div>
+            <div style="flex-direction: column; align-items: flex-start; margin-left: 15px;">
+                <h1 id="full-name" style="color: var(--dark); margin: 0px;">John Doe</h1>
+                <h4 id="job-title" style="color: var(--light); margin: 0px; font-weight: 100;">Programmer</h4>
+                <p id="description">
+
+                </p>
+            </div>
+        </div>
+        <div class="contact">
+            <div><img src="assets/email.png"> <span id="email"></span></div>
+            <div><img src="assets/smartphone-call.png"><span id="number"></span></div>
+            <div><img src="assets/linkedin.png"> <span id="linkedin"></span></div>
+        </div>
+        <div class="main">
+            <div>
+                <div>
+                    <h2 class="main-section-title">Work Experience</h2>
+                    <p id="work-experience">
+
+                    </p>
+                </div>
+                <div>
+                    <h2 class="main-section-title">Education</h2>
+                    <p id="education">
+
+                    </p>
+                </div>
+                <div>
+                    <h2 class="main-section-title">Certificates&Awards</h2>
+                    <p id="certificates">
+
+                    </p>
+                </div>
+            </div>
+            <div>
+                <div>
+                    <h2 class="main-section-title">Skills</h2>
+                    <div class="list-items" id="skills-list"></div>
+                </div>
+                <div>
+                    <h2 class="main-section-title">Languages</h2>
+                    <div class="list-items" id="languages-list"></div>
+                </div>
+                <div>
+                    <h2 class="main-section-title">Interests</h2>
+                    <div class="list-items" id="interests-list"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="scripts/cvConfig.js"></script>
+<script src="scripts/dataModifier.js"></script>
+
+</html>
